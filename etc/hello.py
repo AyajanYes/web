@@ -1,3 +1,4 @@
-pythonpath = '/home/box/web/'  # путь до приложения
-bind = "0.0.0.0:8080"
-workers = 4
+from multiprocessing import cpu_count
+
+bind = '0.0.0.0:8080'
+workers = cpu_count() << 1 + 1
