@@ -1,4 +1,33 @@
-from multiprocessing import cpu_count
+server {
+	
 
-bind = '0.0.0.0:8080'
-workers = cpu_count() << 1 + 1
+		listen 80 default;
+	
+
+		location ^~ /uploads/ {
+	
+
+			root /home/box/web/;
+	
+
+		}
+	
+
+		location ~* ^.+\.\w+$ {
+	
+
+			root /home/box/web/public/;
+	
+
+		}
+	
+
+		location / {
+	
+
+			return 404;
+	
+
+		}
+		
+	}
